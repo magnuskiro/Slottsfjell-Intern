@@ -1,10 +1,10 @@
 <?php
 
-$dbhost = 'localhost';
-$dbuser = 'slottsfjell';
-$dbpass = 'magnus';
-$dbname = 'slottsfjell';
-$dbtbl = 'users';
+$dbhost = 'db.host.net';
+$dbuser = 'user';
+$dbpass = 'password';
+$dbname = 'databaseName';
+$dbtbl = 'the table to use!';
 
 mysql_connect($dbhost, $dbuser, $dbpass) or die ('Error connecting to mysql');
 
