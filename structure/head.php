@@ -1,4 +1,5 @@
-﻿<?PHP echo "<button onClick=\"parent.location='logout.php'\">Logout</button> - Logged in as: " . $_SESSION['username'];  
+﻿<?PHP 
+echo "<button onClick=\"parent.location='logout.php'\">Logout</button> - Logged in as: " . $_SESSION['username'];  
 if($_SESSION['admin']==1){
 echo "  (admin)";
 }
@@ -9,7 +10,7 @@ echo "  (admin)";
 <title>Frivillig på Slottsfjell!</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="design/style.css" rel="stylesheet" type="text/css" media="screen" />
 <!--[if IE]>
 <style type="text/css">
 #sidebar #calendar {

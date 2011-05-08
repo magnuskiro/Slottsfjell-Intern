@@ -1,7 +1,25 @@
 <?PHP 
 //echo "- content1 -";
-include("authenticate.php");
-include("dbconnect.php");
+include("authentication/authenticate.php");
+include("db/dbconnect.php");
+
+echo "Testings - ";
+echo $_GET['content'];
+
+/*
+// if content == "" default to main page.
+$content = $_GET['content'];
+switch ($content)
+{
+case label1:
+  code to be executed if n=label1;
+  break;
+case label2:
+  code to be executed if n=label2;
+  break;
+default:
+  code to be executed if n is different from both label1 and label2;
+}
 
 if($type=="main"){
 $res = mysql_query("SELECT * FROM content ORDER BY date DESC");
@@ -66,4 +84,7 @@ echo "</form>";
 //onclick=\"document.location = 'edit.php';\" 
 
 echo "</div>";
+
+*/
+
 ?>

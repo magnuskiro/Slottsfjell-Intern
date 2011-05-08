@@ -2,8 +2,8 @@
 		<ul>
 			<?PHP 
 				//include("calendar.php");
-				include("links.php");
-				include("downright.php");	
+				include("content/links.php");
+				include("content/downright.php");	
 			?>
 		</ul>
 	</div>

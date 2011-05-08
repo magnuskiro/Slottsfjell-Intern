@@ -1,6 +1,6 @@
 <?PHP 
-include("authenticate.php"); 
-$type = "main";
+include("authentication/authenticate.php"); 
+$type = "";
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <!--
@@ -15,7 +15,7 @@ Released   : 20071108
 
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
-<?PHP include("head.php"); ?>
+<?PHP include("structure/head.php"); ?>
 <body>
 <div id="logo">
 	<h1><a href="#">Slottsfjell</a></h1>
@@ -23,9 +23,9 @@ Released   : 20071108
 </div>
 <div id="menu">
 	<ul>
-		<?PHP include("menu.php");?>
+		<?PHP include("structure/menu.php");?>
 	</ul>
-	<?PHP include("search.php"); ?>
+	<?PHP include("structure/search.php"); ?>
 </div>
 <hr />
 <?PHP include("banner.php"); ?>
@@ -35,17 +35,20 @@ Released   : 20071108
 
 <?PHP 
 //		echo "content start"; 
-		include("content.php"); 
+		if($type == ""){
+			$type = "main";
+		}
+		include("structure/content.php"); 
 
 //		echo "content end"; 
 	?>
 	
 	<!-- end content -->
 	<!-- start sidebar -->
-<?PHP	include("sidebar.php") ?>
+<?PHP	include("structure/sidebar.php") ?>
 	<!-- end sidebar -->
 </div>
 <!-- end page -->
-<?PHP include("footer.php"); ?>
+<?PHP include("structure/footer.php"); ?>
 </body>
 </html>
