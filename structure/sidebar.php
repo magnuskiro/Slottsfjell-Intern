@@ -3,7 +3,7 @@
 			<?PHP 
 				//include("calendar.php");
 				include("content/links.php");
-				include("content/downright.php");	
+				//include("content/downright.php");	
 			?>
 		</ul>
 	</div>

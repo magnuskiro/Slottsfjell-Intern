@@ -1,10 +1,10 @@
 <?PHP
-/*
+
 session_start();
 
 if(!isset($_SESSION['username']))
 {
-header( "Location: loginForm.php" );
+header( "Location: authentication/loginForm.php" );
 }
 else 
 {
@@ -12,5 +12,5 @@ else
 		header( "Location: loginForm.php" );
 	}
 }
-*/
+
 ?>

@@ -1,6 +1,6 @@
 <?php
-include("dbconnect.php");
 include("authenticate.php");
+include("../db/dbconnect.php");
 
 $query = "SELECT * FROM users WHERE username='$_POST[username]'";
 $getinfo = mysql_query($query) or die("SQL error: ".mysql_error()); 
@@ -22,7 +22,7 @@ if($_POST['username']!=""){
 		session_start(); 
 		$_SESSION['username'] = $username;  // store session data 
 		$_SESSION['admin'] = $info['admin'];
-		header( "Location: index.php" ) ;
+		header( "Location: ../index.php" ) ;
 	}
 	else {
 		header( "Location: loginForm.php" ) ;
