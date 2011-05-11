@@ -6,7 +6,7 @@ echo "
 				<h3>Liste over vaktlister for Slottsfjell 2010</h3>
 				<p> 
 ";
-
+/*
  		$path='files/vakt/';  // change the path here related to $
                 $handle=opendir($path);
                 while (($file = readdir($handle))!==false) {
@@ -30,3 +30,5 @@ if($_SESSIN['admin']==1){
 	";
 	
 }
+*/
+?>
