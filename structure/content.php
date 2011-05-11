@@ -5,7 +5,7 @@ echo "<div id='content'>";
 
 $type = $_GET['contentType'];
 
-//conent type switch
+//conent type switch - selecting content for the diffent pages of the site
 switch ($type)
 {
 case '':
