@@ -3,7 +3,7 @@ include("authentication/authenticate.php");
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<?PHP include("structure/head.php"); ?>
+<?PHP include("core/head.php"); ?>
 <body>
 <div id="logo">
 	<h1><a href="index.php">Slottsfjell</a></h1>
@@ -11,28 +11,25 @@ include("authentication/authenticate.php");
 </div>
 <div id="menu">
 	<ul>
-		<?PHP include("structure/menu.php");?>
+		<?PHP include("core/menu.php");?>
 	</ul>
-	<?PHP include("structure/search.php"); ?>
+	<?PHP include("core/search.php"); ?>
 </div>
 <hr />
-<?PHP include("banner.php"); ?>
+<?PHP 
+	include("content/banner.php"); 
+	?>
+
 <!-- start page -->
 <div id="page">
 	<!-- start content -->
-
-<?PHP 
-//		echo "content start"; 
-		include("structure/content.php"); 
-//		echo "content end"; 
-	?>
-	
+<?PHP include("core/content.php"); ?>
 	<!-- end content -->
 	<!-- start sidebar -->
-<?PHP	include("structure/sidebar.php") ?>
+<?PHP	include("core/sidebar.php") ?>
 	<!-- end sidebar -->
 </div>
 <!-- end page -->
-<?PHP include("structure/footer.php"); ?>
+<?PHP include("core/footer.php"); ?>
 </body>
 </html>

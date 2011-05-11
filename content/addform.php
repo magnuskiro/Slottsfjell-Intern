@@ -8,7 +8,7 @@ if($_SESSION['admin']==0)
 ?>
 
 <div class='post'> 
-	<form action='add.php' method='post'>
+	<form action='db/add.php' method='post'>
 
 <?PHP 
 	echo "Forhandsvalgt kattegori: ".$_GET['contentType']."
@@ -27,18 +27,17 @@ if($_SESSION['admin']==0)
 
 	<br />
 	Prioritering(h&oslash;yere tall er h&oslash;yere p&aring; sida): <br>
-	<TEXTAREA NAME='priority' COLS=10 ROWS=1>0</TEXTAREA>		
+	<TEXTAREA NAME='priority' COLS=10 ROWS=1>0</TEXTAREA>	<!-- needs to be changed-> auto priority -->	
 		
 	<br />
 	<br />
-
+	
 	<h2 class='title'><input type='text' name='title'> - Titel</h2>
 	<div class='entry'>
 		<h3><input type='text' name='midtitle'> - Under titel</h3>
 		<!--  <img src='" . $rom['img'] . "' alt='' width='132' height='72' class='left' /> -->
 		<p>
 			Tekst felt:<br/><TEXTAREA NAME='ctext' COLS=60 ROWS=25></TEXTAREA><br/>
-			<!--<input type='checkbox' name='check' value='1'> Kryss av for aa lagre innlegg. <br>-->
 		</p>
 	</div>
 	<br />
