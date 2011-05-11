@@ -23,11 +23,7 @@ include("authentication/authenticate.php");
 
 <?PHP 
 //		echo "content start"; 
-		if($type == ""){
-			$type = "main";
-		}
 		include("structure/content.php"); 
-
 //		echo "content end"; 
 	?>
 	

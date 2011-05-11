@@ -11,11 +11,4 @@ echo "  (admin)";
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="design/style.css" rel="stylesheet" type="text/css" media="screen" />
-<!--[if IE]>
-<style type="text/css">
-#sidebar #calendar {
-	background-position: 0px 20px;
-}
-</style>
-<![endif]-->
 </head>
