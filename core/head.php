@@ -1,7 +1,7 @@
 ﻿<?PHP 
 echo "<button onClick=\"parent.location='authentication/logout.php'\">Logout</button> - Logged in as: " . $_SESSION['username'];  
 if($_SESSION['admin']==1){
-echo "  (admin)";
+echo "	(admin)";
 }
 ?>
 <head>

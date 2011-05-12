@@ -1,10 +1,9 @@
 <?PHP 
 include("authentication/authenticate.php");
 
-if($_SESSION['admin']==0)
+if($_SESSION['admin']==1) //this is ugly and should be changed. 
 {	
-	header( "Location: index.php" );
-}
+
 ?>
 
 <div class='post'> 
@@ -54,3 +53,9 @@ if($_SESSION['admin']==0)
 	</form>
 </div>	
 
+<?PHP
+}
+else{
+	echo "dette har du ikke tilgang til";
+}
+?>

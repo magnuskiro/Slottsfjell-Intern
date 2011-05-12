@@ -15,7 +15,8 @@ echo "
                         }
                 }
                 closedir($handle);
-
+*/
+				
 echo "
 			</p>
 			</div>
@@ -25,10 +26,12 @@ echo "
 		</div>
 ";
 
-if($_SESSIN['admin']==1){
-	echo "	Jeg jobber med filopplasting av vaktlister. Til det er feridig kan vaktlister sendes til:  <a 		href=mailto:magnuskiro@gmail.com>magnuskiro@gmail.com</a> -Kirø
+if($_SESSION['admin']==1){
+	echo "	
+	Jeg jobber med filopplasting av vaktlister. Til det er feridig kan vaktlister sendes til:  
+	<a href=mailto:magnuskiro@gmail.com>magnuskiro@gmail.com</a> -Kirø
 	";
 	
 }
-*/
+
 ?>
