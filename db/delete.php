@@ -1,6 +1,11 @@
 <?PHP
-include("authenticate.php");
+include("../authentication/authenticate.php");
 include("dbconnect.php");
-mysql_query("DELETE FROM content WHERE id='".$_POST[id]."'");
-header( "Location: ".$_POST[type].".php" );
+if(isset($_POST[checkbox])){
+	mysql_query("DELETE FROM content WHERE id='".$_POST[id]."'");
+	header( "Location: ../index.php" );
+	}
+	else{
+		header( "Location: ../index.php?contentType=delete?article=".$_POST[id] );
+	}
 ?>

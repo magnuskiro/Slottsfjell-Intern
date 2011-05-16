@@ -24,6 +24,11 @@ else{
 		case "edit";
 			include("content/editform.php");
 			break;
+		case "delete":
+			include("content/deleteform.php");
+			$res = mysql_query("SELECT * FROM content WHERE id='".$_GET[article]."' ORDER BY priority ASC");
+			getContent($res);
+			break;
 		default:
 			$res = mysql_query("SELECT * FROM content WHERE type='$type' ORDER BY priority ASC");
 			isAdmin($type);
@@ -48,27 +53,29 @@ function isAdmin($type){
 //use data from the result set and display it on the page. 
 function getContent($res){
 	while($row = mysql_fetch_array($res)){
-		echo "<form action='index.php?contentType=edit&article=".$row['id']."' method='post'><input type='hidden' name='id' value='".$row['id']."'>";
-			echo "
-				<div class='post'><h2 class='title'> " . $row['title'] . "</h2></u>
-					<div class='entry'>
-						<h3>" . $row['midtitle'] . "</h3>
-						<!--  <img src='" . $row['img'] . "' alt='' width='132' height='72' class='left' /> -->
-						<p> " . $row['text'] . "</p>
-					</div>
-					<p class='meta'> Posted on " . $row['date'] . " by:  <a href='#'>".$row['author']."</a> &nbsp;|&nbsp; 
-					<a href='#'>comments</a>&nbsp;|&nbsp;
-			";
-			//if the user is an admin, show the edit button
-			if($_SESSION['admin']==1){
-				echo"
-					<input type='submit' value='edit'>
-				";
-			}
-			echo		"  </p>
+		echo "
+			<div class='post'><h2 class='title'> " . $row['title'] . "</h2></u>
+				<div class='entry'>
+					<h3>" . $row['midtitle'] . "</h3>
+					<!--  <img src='" . $row['img'] . "' alt='' width='132' height='72' class='left' /> -->
+					<p> " . $row['text'] . "</p>
 				</div>
-			"; 
-		echo "</form>";
+				<p class='meta'> 
+				
+				Posted on " . $row['date'] . " by:  <a href='#'>".$row['author']."</a> 
+				<!-- &nbsp;|&nbsp; <a href='#'>comments</a>&nbsp;|&nbsp; -->
+		";
+		//if the user is an admin, show the edit button and delete button. 
+		if($_SESSION['admin']==1){
+			echo" &nbsp;|&nbsp; 
+				<a class='edit' href='index.php?contentType=edit&article=".$row['id']."'>Edit</a> &nbsp;|&nbsp; 
+				<a class='delete' href='index.php?contentType=delete&article=".$row['id']."'>Delete</a>
+			";
+		}
+		echo "
+				</p>
+		</div>
+		"; 
 	}//end while
 }
 
