@@ -6,11 +6,12 @@ echo "<div id='content'>";
 $type = $_GET['contentType'];
 
 //when adding new material to the site
+//this is a special case because we have to maintain the contentType.
 if($_GET['action'] == "add"){
 	include("content/addform.php");
 }
 else{
-	//conent type switch - selecting content for the diffent pages of the site
+	//conent type switch - selecting content for the different pages of the site
 	switch ($type)
 	{
 		case '':
@@ -20,6 +21,9 @@ else{
 		case "scheduel":
 			include("content/vaktlister.php");
 			break; 
+		case "edit";
+			include("content/editform.php");
+			break;
 		default:
 			$res = mysql_query("SELECT * FROM content WHERE type='$type' ORDER BY priority ASC");
 			isAdmin($type);
@@ -44,7 +48,7 @@ function isAdmin($type){
 //use data from the result set and display it on the page. 
 function getContent($res){
 	while($row = mysql_fetch_array($res)){
-		echo "<form action='db/editform.php' method='post'><input type='hidden' name='id' value='".$row['id']."'>";
+		echo "<form action='index.php?contentType=edit&article=".$row['id']."' method='post'><input type='hidden' name='id' value='".$row['id']."'>";
 			echo "
 				<div class='post'><h2 class='title'> " . $row['title'] . "</h2></u>
 					<div class='entry'>

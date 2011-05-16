@@ -14,7 +14,7 @@ if($_SESSION['admin']==1){
 	
 		//forms the query to insert current data in to the database. 
 		$query = "INSERT INTO content (id, priority, type, author, title, midtitle, text) 
-		VALUES ('', '".$_POST['priority']."', '".$_POST['type']."', '".$_POST['author']."', '".$_POST['title']."', '".$_POST['midtitle']."', '".$_POST['ctext']."')";
+		VALUES ('', '".$_POST['priority']."', '".$_POST['type']."', '".$_SESSION['username']."', '".$_POST['title']."', '".$_POST['midtitle']."', '".$_POST['ctext']."')";
 		
 		//insert into database. 
 		mysql_query($query);
