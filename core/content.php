@@ -1,4 +1,10 @@
 <?PHP
+ /*
+Authenticatication. 
+This is a bad way of doing it. 
+When someone try to load a particular file the path to the authentication file is nat always reachable. 
+Althought oy get a lof of errors, so you can't do anything.  
+ */
 include("authentication/authenticate.php");
 include("db/dbconnect.php");
 
