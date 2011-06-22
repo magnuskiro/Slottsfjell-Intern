@@ -25,7 +25,7 @@ if($_SESSION['admin']==1){
         title = '".$_POST[title]."',
         midtitle = '".$_POST[midtitle]."',
         text = '".$_POST[ctext]."'
-		WHERE id = 6;
+		WHERE id = ".$_POST['id'].";
         ";
 		
 		//insert into database. 
