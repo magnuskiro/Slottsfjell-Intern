@@ -70,15 +70,57 @@ a img {
 	border: none;
 }
 
-img.left {
+/*Images*/
+
+div.img
+  {
+  margin:2px;
+  border:0px solid #0000ff;
+  height:auto;
+  width:auto;
+  float:left;
+  text-align:center;
+  }
+div.img img
+  {
+  display:inline;
+  margin:3px;
+  border:1px solid #ffffff;
+  }
+div.img a:hover img
+  {
+  border:1px solid #0000ff;
+  }
+div.desc
+  {
+  text-align:center;
+  font-weight:normal;
+  width:132px;
+  margin:2px;
+  }
+
+img.person {
 	float: left;
 	margin-right: 20px;
+	margin-bottom: 5px;
+	width: 200;
+	height: 125;
 }
+
+img.personlist {
+	margin-right: 5px;
+	margin-bottom: 5px;
+	width: 135;
+	height: 100;
+}
+
 
 img.right {
 	float: right;
 	margin-right: 20px;
 }
+
+/*END images*/
 
 hr {
 	display: none;

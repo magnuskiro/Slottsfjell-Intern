@@ -14,14 +14,12 @@ if($_SESSION['admin']==1) //this is ugly and should be changed.
 	<br />
 	Velg kategori: 
 	<select name='type'>
-	  <option value='".$_GET['contentType']."'>".$_GET['contentType']."</option>
-	  <option value='news'>Nyheter</option>
-	  <option value='about'>Om Slottsfjellet</option>
-	  <option value='work'>Jobb på Slottsfjellet</option>
-	  <option value='camping'>Camping</option>
-	  <option value='info'>INFO</option>
-	</select>
-";
+	  <option value='".$_GET['contentType']."'>".$_GET['contentType']."</option>";
+	$res = mysql_query("SELECT * FROM categories");
+	while($row = mysql_fetch_array($res)){
+		echo "<option value='".$row[type]."'>".$row[name]."</option>";
+	}//end while
+	echo "</select>";
 ?>
 
 	<br />
